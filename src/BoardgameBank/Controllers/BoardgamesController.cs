@@ -8,5 +8,12 @@ namespace BoardgameBank.Controllers
 {
     public class BoardgamesController : Controller
     {
+        public ActionResult Search()
+        {
+            return new ContentResult()
+            {
+                Content = "Hello from the comic books controller!"
+            };
+        }
     }
 }
