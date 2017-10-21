@@ -2,10 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Boardgame Bank - @ViewBag.Title</title>
+    <title>BGB - @ViewBag.Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/images/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/images/favicon/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -33,18 +44,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarsExample07">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
-                                Home
-                                <span class="sr-only">(current)</span>
-                            </a>
+                        <!--TODO: Figure out how to make current page active-->
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Search", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add</a>
+                            @Html.ActionLink("Add", "AddGame", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">List</a>
+                            @Html.ActionLink("List", "GamesList", null, new { @class = "nav-link" })
                         </li>
+                    </ul>
                 </div>
             </div>
         </nav>

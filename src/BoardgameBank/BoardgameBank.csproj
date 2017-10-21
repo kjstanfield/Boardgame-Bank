@@ -97,6 +97,26 @@
     <Content Include="Images\boardgames\sheriffofnottingham.jpg" />
     <Content Include="Images\delete.svg" />
     <Content Include="Images\edit.svg" />
+    <Content Include="Images\favicon\browserconfig.xml" />
+    <Content Include="Images\favicon\favicon-114.png" />
+    <Content Include="Images\favicon\favicon-120.png" />
+    <Content Include="Images\favicon\favicon-144.png" />
+    <Content Include="Images\favicon\favicon-150.png" />
+    <Content Include="Images\favicon\favicon-152.png" />
+    <Content Include="Images\favicon\favicon-16.png" />
+    <Content Include="Images\favicon\favicon-160.png" />
+    <Content Include="Images\favicon\favicon-180.png" />
+    <Content Include="Images\favicon\favicon-192.png" />
+    <Content Include="Images\favicon\favicon-310.png" />
+    <Content Include="Images\favicon\favicon-32.png" />
+    <Content Include="Images\favicon\favicon-57.png" />
+    <Content Include="Images\favicon\favicon-60.png" />
+    <Content Include="Images\favicon\favicon-64.png" />
+    <Content Include="Images\favicon\favicon-70.png" />
+    <Content Include="Images\favicon\favicon-72.png" />
+    <Content Include="Images\favicon\favicon-76.png" />
+    <Content Include="Images\favicon\favicon-96.png" />
+    <Content Include="Images\favicon\favicon.ico" />
     <Content Include="Images\vault.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -114,7 +134,7 @@
     <Content Include="Views\Boardgames\Search.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Boardgames\AddGame.cshtml" />
-    <Content Include="Views\Boardgames\GameTable.cshtml" />
+    <Content Include="Views\Boardgames\GamesList.cshtml" />
     <Content Include="Views\Boardgames\SearchResults.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

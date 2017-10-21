@@ -12,5 +12,15 @@ namespace BoardgameBank.Controllers
         {
             return View();
         }
+
+        public ActionResult AddGame()
+        {
+            return View();
+        }
+
+        public ActionResult GamesList()
+        {
+            return View();
+        }
     }
 }
