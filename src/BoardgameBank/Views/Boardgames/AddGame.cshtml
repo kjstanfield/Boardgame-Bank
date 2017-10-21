@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Game";
+}
+
+<!-- Add Game -->
+<section id="addgame">
+    <h3 class="centerthis">Add New Game</h3>
+    <section id="form area">
+        <form>
+            <div class="form-group">
+                <label>Number of Players:</label>
+                <div class="formcontainer">
+                    <div id="playerCheck">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption1" value="1player"> 1
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption2" value="2player"> 2
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption3" value="3player"> 3
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption4" value="4player"> 4
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption5" value="5player"> 5
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="players" id="playerOption6" value="6player"> 6+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="timeSelect">Play Time:</label>
+                <select class="form-control" id="timeSelect">
+                    <option selected>...</option>
+                    <option>Quick</option>
+                    <option>Medium</option>
+                    <option>Long</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="categorySelect">Categories:</label>
+                <select multiple class="form-control" id="categorySelect" size="7">
+                    <option>Area Control</option>
+                    <option>Bluffing</option>
+                    <option>Card Game</option>
+                    <option>Deck Builder</option>
+                    <option>Dice Rolling</option>
+                    <option>Elimination</option>
+                    <option>Hidden Roles</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rating:</label>
+                <div class="formcontainer">
+                    <div id="ratingRadios">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="rating" id="ratingOption1" value="option1"> 1
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="rating" id="ratingOption2" value="option1"> 2
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="rating" id="ratingOption3" value="option1"> 3
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="rating" id="ratingOption4" value="option1"> 4
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="rating" id="ratingOption5" value="option1"> 5
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary addgamebtn">ADD GAME</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>

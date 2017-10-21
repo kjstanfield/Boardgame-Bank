@@ -1,115 +1,49 @@
-﻿@{
-    Layout = null;
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Search";
 }
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Boardgame Bank</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-          crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/media.css" />
-
-    <!-- Google Font -->
-    <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-    <!-- Navigation -->
-    <section id="navigation">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark underline">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img id="navlogo" src="/images/vault.svg" alt="Vault Logo">
-                    <span id="title">Board Game Bank</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
-                                Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Add</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">List</a>
-                        </li>
-                </div>
+<!-- Search Form -->
+<section id="search">
+    <h3 class="centerthis">Game Lookup</h3>
+    <section id="form area">
+        <form>
+            <div class="form-group">
+                <label for="playerSelect">Number of Players:</label>
+                <select class="form-control" id="playerSelect">
+                    <option selected>...</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7+</option>
+                </select>
             </div>
-        </nav>
+            <div class="form-group">
+                <label for="timeSelect">Play Time:</label>
+                <select class="form-control" id="timeSelect">
+                    <option selected>...</option>
+                    <option>Quick</option>
+                    <option>Medium</option>
+                    <option>Long</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="categorySelect">Categories:</label>
+                <select multiple class="form-control" id="categorySelect" size="7">
+                    <option>Area Control</option>
+                    <option>Bluffing</option>
+                    <option>Card Game</option>
+                    <option>Deck Builder</option>
+                    <option>Dice Rolling</option>
+                    <option>Elimination</option>
+                    <option>Hidden Roles</option>
+                </select>
+            </div>
+            <div class="centerthis">
+                <button type="button" class="btn btn-primary">SEARCH</button>
+            </div>
+        </form>
     </section>
-
-    <!--**********************************************************************************************************-->
-
-    <!-- Search Form -->
-    <section id="search">
-        <h3 class="centerthis">Game Lookup</h3>
-        <section id="form area">
-            <form>
-                <div class="form-group">
-                    <label for="playerSelect">Number of Players:</label>
-                    <select class="form-control" id="playerSelect">
-                        <option selected>...</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="timeSelect">Play Time:</label>
-                    <select class="form-control" id="timeSelect">
-                        <option selected>...</option>
-                        <option>Quick</option>
-                        <option>Medium</option>
-                        <option>Long</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="categorySelect">Categories:</label>
-                    <select multiple class="form-control" id="categorySelect" size="7">
-                        <option>Area Control</option>
-                        <option>Bluffing</option>
-                        <option>Card Game</option>
-                        <option>Deck Builder</option>
-                        <option>Dice Rolling</option>
-                        <option>Elimination</option>
-                        <option>Hidden Roles</option>
-                    </select>
-                </div>
-                <div class="centerthis">
-                    <button type="button" class="btn btn-primary">SEARCH</button>
-                </div>
-            </form>
-        </section>
-    </section>
-
-    <!--**********************************************************************************************************-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-            crossorigin="anonymous"></script>
-</body>
-
-</html>
+</section>

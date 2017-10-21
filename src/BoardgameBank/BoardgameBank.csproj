@@ -112,6 +112,10 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Boardgames\Search.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Boardgames\AddGame.cshtml" />
+    <Content Include="Views\Boardgames\GameTable.cshtml" />
+    <Content Include="Views\Boardgames\SearchResults.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
