@@ -1,0 +1,191 @@
+/* #FAFAFF #848C8E #65737C #374249 #30343F #DCF763 #A0BC23 */
+
+
+/* ==============================
+   BASE
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 46px;
+    text-transform: uppercase;
+    margin: 0 0 23px 0;
+}
+
+h2 {
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0 0 1.2rem 0;
+}
+
+p {
+    font-family: 'Droid Serif', serif;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+
+body {
+    background-color: #848C8E;
+    color: #30343F;
+}
+
+.centerthis {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #30343F;
+    border-color: #374249;
+}
+
+.btn-primary:hover {
+    background-color: #A0BC23;
+    border-color: #A0BC23;
+}
+
+.btn-primary:focus,
+.btn:active:focus,
+.btn.active:focus {
+    background-color: #A0BC23;
+    border-color: #A0BC23;
+}
+
+
+/* ==============================
+   NAV
+   ============================== */
+
+#title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+#navigation {
+    padding-bottom: 1rem;
+}
+
+#navlogo {
+    width: 2.4rem;
+    margin-right: .7rem;
+    margin-bottom: .5rem;
+}
+
+.underline {
+    border-bottom: 5px solid;
+    border-color: #DCF763;
+    box-shadow: 0px 4px 10px rgba(48, 52, 63, .3);
+}
+
+
+/* ==============================
+   FORM
+   ============================== */
+
+label {
+    color: #FAFAFF;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #DCF763;
+}
+
+#ratingRadios {
+    margin: 0 0 .4rem 0;
+}
+
+.formcontainer {
+    text-align: center;
+}
+
+
+/* ==============================
+   ADD GAME
+   ============================== */
+
+#addgame {
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   SEARCH GAMES
+   ============================== */
+
+#search {
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   SEARCH RESULTS
+   ============================== */
+
+.card-block {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card {
+    width: 85%;
+    margin: 0 auto 1.3rem auto;
+}
+
+.card img {
+    width: 70%;
+    margin: .4rem;
+    max-width: 25rem;
+}
+
+.ratingText {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+
+/* ==============================
+   GAME TABLE
+   ============================== */
+
+.smallbutton {
+    width: 1.2rem;
+}
+
+#gametable .btn {
+    display: none;
+}
+
+#gametable .hiderating {
+    display: none;
+}
+
+.table thead th {
+    border-bottom: none;
+}
