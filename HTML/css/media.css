@@ -1,0 +1,54 @@
+@media (min-width: 620px) {
+    .card {
+        width: 45%;
+        margin: 0 auto 1.3rem auto;
+    }
+}
+
+@media (min-width: 768px) {
+    #gametable {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .smallbutton {
+        display: none;
+    }
+    #gametable .btn {
+        display: inline-block;
+    }
+    .buttonholder {
+        text-align: right;
+    }
+    #gametable .hiderating {
+        display: flex;
+    }
+    #search {
+        margin: 0 auto;
+        width: 70%;
+    }
+    #addgame {
+        margin: 0 auto;
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #gametable {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #addgame {
+        margin: 0 auto;
+        width: 30%;
+    }
+
+    #search {
+        margin: 0 auto;
+        width: 30%;
+    }
+
+    .formcontainer {
+        text-align: left;
+    }
+}
