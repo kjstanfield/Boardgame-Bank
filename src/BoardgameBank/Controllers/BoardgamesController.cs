@@ -10,10 +10,7 @@ namespace BoardgameBank.Controllers
     {
         public ActionResult Search()
         {
-            return new ContentResult()
-            {
-                Content = "Hello from the comic books controller!"
-            };
+            return View();
         }
     }
 }
