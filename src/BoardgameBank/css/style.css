@@ -21,7 +21,6 @@ h1 {
 h2 {
     font-family: 'Droid Serif', serif;
     font-weight: 400;
-    font-style: italic;
     font-size: 20px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -188,4 +187,29 @@ label {
 
 .table thead th {
     border-bottom: none;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer .footerborder{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    border-top: thin solid;
+    border-color: rgba(48, 52, 63, .2);
+    color: rgba(48, 52, 63, .4);
+}
+
+footer p{
+    font-size: .8rem;
+    margin: 0 0 0 0;
+}
+
+footer .iconcredit a,
+footer .iconcredit a:hover,
+footer .iconcredit a:visited {
+    font-size: .7rem;
+    color: rgba(48, 52, 63, .4);
 }
