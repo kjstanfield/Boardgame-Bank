@@ -22,13 +22,16 @@
     #gametable .hiderating {
         display: flex;
     }
-    #search {
+
+    #search,
+    #addgame,
+    #gameinfo {
         margin: 0 auto;
         width: 70%;
     }
-    #addgame {
-        margin: 0 auto;
-        width: 70%;
+
+    footer .footerborder {
+        width: 45%;
     }
 }
 
@@ -38,17 +41,17 @@
         margin: 0 auto;
     }
 
-    #addgame {
-        margin: 0 auto;
-        width: 30%;
-    }
-
-    #search {
-        margin: 0 auto;
+    #search,
+    #addgame,
+    #gameinfo {
         width: 30%;
     }
 
     .formcontainer {
         text-align: left;
+    }
+
+    footer .footerborder {
+        width: 30%;
     }
 }
