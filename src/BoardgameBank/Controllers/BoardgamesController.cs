@@ -22,5 +22,10 @@ namespace BoardgameBank.Controllers
         {
             return View();
         }
+
+        public ActionResult GameInfo()
+        {
+            return View();
+        }
     }
 }

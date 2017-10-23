@@ -33,8 +33,8 @@
     <section id="navigation">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark underline">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img id="navlogo" src="/images/vault.svg" alt="Vault Logo">
+                <a class="navbar-brand" onclick="location.href='@Url.Action("Search")'">
+                    <img id="navlogo" src="/images/vault.svg" alt="Vault Logo" onclick="location.href='@Url.Action("Search")'">
                     <span id="title">Board Game Bank</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07"
@@ -69,7 +69,7 @@
     <!--**********************************************************************************************************-->
 
     <footer>
-        <div class="footerborder fixed-bottom">
+        <div class="footerborder">
             <p>Board Game Bank &copy; @DateTime.Now.Year</p>
             <div>
                 <p class="iconcredit">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from 

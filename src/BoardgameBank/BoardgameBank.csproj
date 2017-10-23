@@ -137,6 +137,7 @@
     <Content Include="Views\Boardgames\GamesList.cshtml" />
     <Content Include="Views\Boardgames\SearchResults.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Boardgames\GameInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

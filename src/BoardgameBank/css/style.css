@@ -56,17 +56,17 @@ body {
     border-color: #374249;
 }
 
-.btn-primary:hover {
-    background-color: #A0BC23;
-    border-color: #A0BC23;
-}
+    .btn-primary:hover {
+        background-color: #A0BC23;
+        border-color: #A0BC23;
+    }
 
-.btn-primary:focus,
-.btn:active:focus,
-.btn.active:focus {
-    background-color: #A0BC23;
-    border-color: #A0BC23;
-}
+    .btn-primary:focus,
+    .btn:active:focus,
+    .btn.active:focus {
+        background-color: #A0BC23;
+        border-color: #A0BC23;
+    }
 
 
 /* ==============================
@@ -76,6 +76,7 @@ body {
 #title {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
+    color: #FAFAFF;
     line-height: 51px;
     font-size: 23px;
     text-transform: uppercase;
@@ -155,11 +156,11 @@ label {
     margin: 0 auto 1.3rem auto;
 }
 
-.card img {
-    width: 70%;
-    margin: .4rem;
-    max-width: 25rem;
-}
+    .card img {
+        width: 70%;
+        margin: .4rem;
+        max-width: 25rem;
+    }
 
 .ratingText {
     font-family: 'Oswald', sans-serif;
@@ -189,20 +190,44 @@ label {
     border-bottom: none;
 }
 
+
+/* ==============================
+   GAME INFO
+   ============================== */
+
+#gameinfo {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.infobox {
+    text-align: center;
+}
+
+    .infobox h3 {
+        margin: 0;
+    }
+
+.gameinfoimg {
+    margin: 1rem;
+    max-width: 80%;
+}
+
+
 /* ==============================
    FOOTER
    ============================== */
 
-footer .footerborder{
-    width: 40%;
-    margin: 0 auto;
+footer .footerborder {
+    width: 80%;
+    margin: 5rem auto 2rem auto;
     text-align: center;
     border-top: thin solid;
     border-color: rgba(48, 52, 63, .2);
     color: rgba(48, 52, 63, .4);
 }
 
-footer p{
+footer p {
     font-size: .8rem;
     margin: 0 0 0 0;
 }
