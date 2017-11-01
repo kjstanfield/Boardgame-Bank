@@ -8,7 +8,7 @@ namespace BoardgameBank
         public Context()
         {
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
-            Database.SetInitializer(new DropCreateDatabaseAlways<Context>());
+            Database.SetInitializer(new DatabaseInitializer());
         }
         public DbSet<Boardgame> BoardGames { get; set; }
     }
