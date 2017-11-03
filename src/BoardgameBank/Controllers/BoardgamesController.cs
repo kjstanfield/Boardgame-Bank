@@ -1,8 +1,4 @@
-﻿using BoardgameBank.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;-
+﻿using System.Linq;
 using System.Web.Mvc;
 
 namespace BoardgameBank.Controllers
@@ -11,22 +7,35 @@ namespace BoardgameBank.Controllers
     {
         public ActionResult Search()
         {
-            return View();
+            using (var context = new Context())
+            {
+                var SearchModel = new SearchViewModel
+                {
+                    AllCategories = context.Categories.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.CategoryName }).ToList(),
+                    AllPlayerCounts = context.PlayerCounts.Select(x => new SelectListItem { Value = x.Count.ToString()}).ToList()
+                };
+                return View(SearchModel);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ExecuteSearch(SearchViewModel model)
+        {
+            return View(nameof(GamesList));
         }
 
         public ActionResult AddGame()
         {
-            using (var context = new Context())
-            {
-
-                var boardgame = context.BoardGames.ToList();
-            }
             return View();
         }
 
         public ActionResult GamesList()
         {
-            return View();
+            using (var context = new Context())
+            {
+                var Boardgames = context.BoardGames.ToList();
+                return View(Boardgames);
+            }
         }
 
         public ActionResult GameInfo()

@@ -1,4 +1,7 @@
-﻿@{ 
+﻿@using BoardgameBank.Controllers;
+@model SearchViewModel
+
+@{ 
     ViewBag.Title = "Search";
 }
 
@@ -6,22 +9,21 @@
 <section id="search">
     <h3 class="centerthis">Game Lookup</h3>
     <section id="form area">
-        <form>
+        <form method="post" action="@Url.Action("ExecuteSearch")">
             <div class="form-group">
                 <label for="playerSelect">Number of Players:</label>
-                <select class="form-control" id="playerSelect">
+                <select name="PlayerCount" class="form-control" id="playerSelect">
                     <option selected>...</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                    <option>6</option>
-                    <option>7+</option>
+                    <option>6+</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="timeSelect">Play Time:</label>
-                <select class="form-control" id="timeSelect">
+                <select name="PlayTime" class="form-control" id="timeSelect">
                     <option selected>...</option>
                     <option>Quick</option>
                     <option>Medium</option>
@@ -30,7 +32,10 @@
             </div>
             <div class="form-group">
                 <label for="categorySelect">Categories:</label>
-                <select multiple class="form-control" id="categorySelect" size="7">
+                @Html.ListBoxFor( x => x.Categories, Model.AllCategories, new { @class = "form-control" } )
+
+
+                <select name="Categories" multiple class="form-control" id="categorySelect" size="7">
                     <option>Area Control</option>
                     <option>Bluffing</option>
                     <option>Card Game</option>
@@ -41,7 +46,7 @@
                 </select>
             </div>
             <div class="centerthis">
-                <button type="button" class="btn btn-primary">SEARCH</button>
+                <button type="submit" class="btn btn-primary">SEARCH</button>
             </div>
         </form>
     </section>

@@ -130,11 +130,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Controllers\BoardgamesController.cs" />
+    <Compile Include="Models\SearchViewModel.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Boardgame.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\PlayerCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -145,7 +147,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Boardgames\AddGame.cshtml" />
     <Content Include="Views\Boardgames\GamesList.cshtml" />
-    <Content Include="Views\Boardgames\SearchResults.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Boardgames\GameInfo.cshtml" />
     <None Include="Web.Debug.config">

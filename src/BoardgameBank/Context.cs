@@ -11,5 +11,7 @@ namespace BoardgameBank
             Database.SetInitializer(new DatabaseInitializer());
         }
         public DbSet<Boardgame> BoardGames { get; set; }
+        public DbSet<PlayerCount> PlayerCounts { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
