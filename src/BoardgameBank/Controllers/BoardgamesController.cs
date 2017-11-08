@@ -5,6 +5,7 @@ namespace BoardgameBank.Controllers
 {
     public class BoardgamesController : Controller
     {
+        //Search Page (Searching for games)
         public ActionResult Search()
         {
             using (var context = new Context())
@@ -24,11 +25,31 @@ namespace BoardgameBank.Controllers
             return View(nameof(GamesList));
         }
 
+
+
+        //Add Game Page (Add a new Game)
         public ActionResult AddGame()
         {
-            return View();
+            using (var context = new Context())
+            {
+                var AddModel = new AddGameViewModel
+                {
+                    AllCategories = context.Categories.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.CategoryName }).ToList(),
+                    AllPlayerCounts = context.PlayerCounts.Select(x => new SelectListItem { Value = x.Count.ToString() }).ToList()
+                };
+                return View(AddModel);
+            }
         }
 
+        [HttpPost]
+        public ActionResult AddGamePost(AddGameViewModel model)
+        {
+            return View(model);
+        }
+
+
+
+        //GamesList Page (List All Games)
         public ActionResult GamesList()
         {
             using (var context = new Context())
@@ -38,6 +59,9 @@ namespace BoardgameBank.Controllers
             }
         }
 
+
+
+        //GameInfo Page (Edit Game)
         public ActionResult GameInfo()
         {
             return View();

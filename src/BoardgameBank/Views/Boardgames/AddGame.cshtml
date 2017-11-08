@@ -1,4 +1,7 @@
-﻿@{
+﻿@using BoardgameBank.Controllers;
+@model AddGameViewModel
+
+@{
     ViewBag.Title = "Add Game";
 }
 
@@ -6,9 +9,14 @@
 <section id="addgame">
     <h3 class="centerthis">Add New Game</h3>
     <section id="form area">
-        <form>
+        @using (Html.BeginForm())
+        {
             <div class="form-group">
-                <label>Number of Players:</label>
+                @Html.Label("Name:")
+                @Html.TextBox("newGameName", null, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Number of Players:")
                 <div class="formcontainer">
                     <div id="playerCheck">
                         <div class="form-check form-check-inline">
@@ -45,7 +53,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="timeSelect">Play Time:</label>
+                @Html.Label("Play Time:")
                 <select class="form-control" id="timeSelect">
                     <option selected>...</option>
                     <option>Quick</option>
@@ -54,16 +62,9 @@
                 </select>
             </div>
             <div class="form-group">
+                @Html.Label("Categories")
                 <label for="categorySelect">Categories:</label>
-                <select multiple class="form-control" id="categorySelect" size="7">
-                    <option>Area Control</option>
-                    <option>Bluffing</option>
-                    <option>Card Game</option>
-                    <option>Deck Builder</option>
-                    <option>Dice Rolling</option>
-                    <option>Elimination</option>
-                    <option>Hidden Roles</option>
-                </select>
+                @Html.ListBoxFor(x => x.Categories, Model.AllCategories, new { @class = "form-control", size = 8 })
             </div>
             <div class="form-group">
                 <label>Rating:</label>
@@ -95,9 +96,10 @@
                             </label>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary addgamebtn">ADD GAME</button>
+                    <button type="submit" class="btn btn-primary addgamebtn">ADD GAME</button>
                 </div>
             </div>
-        </form>
+        }
+
     </section>
 </section>
