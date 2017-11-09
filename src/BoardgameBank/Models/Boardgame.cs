@@ -18,7 +18,6 @@ namespace BoardgameBank.Models
         public string GameName { get; set; }
         [Required, StringLength(10)]
         public string PlayTime { get; set; }
-        public List<string> CategoryNames { get; set; }
         [Range(1, 5)]
         public int? Rating { get; set; }
         public DateTime Added { get; set; }
