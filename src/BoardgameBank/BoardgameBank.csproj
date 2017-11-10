@@ -131,6 +131,7 @@
     <Compile Include="Context.cs" />
     <Compile Include="Controllers\BoardgamesController.cs" />
     <Compile Include="Models\AddGameViewModel.cs" />
+    <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Global.asax.cs">

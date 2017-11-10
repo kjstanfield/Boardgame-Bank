@@ -72,8 +72,12 @@ namespace BoardgameBank.Controllers
         {
             using (var context = new Context())
             {
-                var Boardgames = context.BoardGames.ToList();
-                return View(Boardgames);
+                var boardgame = new ListViewModel
+                {
+
+
+                };
+                return View();
             }
         }
 
