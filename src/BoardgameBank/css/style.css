@@ -195,6 +195,9 @@ label {
     border-bottom: none;
 }
 
+.btn a {
+    color: #FAFAFF;
+}
 
 /* ==============================
    GAME INFO
