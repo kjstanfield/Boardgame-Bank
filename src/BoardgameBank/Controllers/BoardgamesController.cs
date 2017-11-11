@@ -93,13 +93,26 @@ namespace BoardgameBank.Controllers
 
 
 
-        //GameInfo Page (Edit Game)
+        //Selected game info
         public ActionResult GameInfo()
         {
-            return View();
+            using (var context = new Context())
+            {
+
+                return View(GamesList);
+            }
         }
 
 
+        //Edit
+        [HttpPost]
+        public ActionResult Edit(Boardgame boardgame)
+        {
+            BoardgameRepository.UpdateGame(boardgame);
+            return RedirectToAction("GamesList");
+        }
+
+        //Delete
         public ActionResult Delete(int id)
         {
             BoardgameRepository.DeleteGame(id);
