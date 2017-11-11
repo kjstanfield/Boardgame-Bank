@@ -1,4 +1,5 @@
 ﻿@using BoardgameBank.Controllers;
+@model ListViewModel
 
 @{
     ViewBag.Title = "Games List";
@@ -19,48 +20,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">Dead of Winter</th>
-                <td>2 to 5</td>
-                <td>Long</td>
-                <td class="hiderating">5</td>
-                <td>
-                    <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo")'">
-                    <img class="smallbutton" src="/images/delete.svg">
-                    <div class="buttonholder">
-                        <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("GameInfo")'">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">Dead of Winter</th>
-                <td>2 to 5</td>
-                <td>Long</td>
-                <td class="hiderating">5</td>
-                <td>
-                    <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo")'">
-                    <img class="smallbutton" src="/images/delete.svg">
-                    <div class="buttonholder">
-                        <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("GameInfo")'">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">Dead of Winter</th>
-                <td>2 to 5</td>
-                <td>Long</td>
-                <td class="hiderating">5</td>
-                <td>
-                    <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo")'">
-                    <img class="smallbutton" src="/images/delete.svg">
-                    <div class="buttonholder">
-                        <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("GameInfo")'">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </td>
-            </tr>
+            @foreach (var boardgame in Model.Boardgames)
+            {
+                <tr>
+                    <th scope="row">@boardgame.GameName</th>
+                    <td>@boardgame.PlayerCounts.Min() to @boardgame.PlayerCounts.Max()</td>
+                    <td>@boardgame.PlayTime</td>
+                    <td class="hiderating">@boardgame.Rating</td>
+                    <td>
+                        <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo")'">
+                        <img class="smallbutton" src="/images/delete.svg">
+                        <div class="buttonholder">
+                            <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("GameInfo")'">Edit</button>
+                            <button type="submit" class="btn btn-danger">@Html.ActionLink("Delete", "Delete", "Boardgames", new { id = boardgame.Id }, null)</button>
+                        </div>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </section>

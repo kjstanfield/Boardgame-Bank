@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using BoardgameBank.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using BoardgameBank.Data;
 
 namespace BoardgameBank.Controllers
 {
@@ -48,8 +50,10 @@ namespace BoardgameBank.Controllers
         {
             using (var context = new Context())
             {
-                var boardgame = new Models.Boardgame();
-                boardgame.GameName = model.GameName;
+                var boardgame = new Boardgame
+                {
+                    GameName = model.GameName
+                };
 
                 var playercounts = context.PlayerCounts.Where(x => model.SelectedPlayerCounts.Contains(x.Count.ToString())).ToList();
                 boardgame.PlayerCounts = playercounts;
@@ -59,10 +63,10 @@ namespace BoardgameBank.Controllers
                 boardgame.Categories = categories;
                 boardgame.Rating = int.Parse(model.SelectedRating);
 
-                context.BoardGames.Add(boardgame);
+                context.Boardgames.Add(boardgame);
                 context.SaveChanges();
             }
-            return View("GamesList");
+            return Redirect("GamesList");
         }
 
 
@@ -72,12 +76,18 @@ namespace BoardgameBank.Controllers
         {
             using (var context = new Context())
             {
-                var boardgame = new ListViewModel
+                var Boardgames = context.Boardgames.Select(bg => new BoardgameViewModel
                 {
+                    GameName = bg.GameName,
+                    PlayTime = bg.PlayTime,
+                    Rating = bg.Rating.ToString(),
+                    Id = bg.Id,
+                    PlayerCounts = bg.PlayerCounts.Select(p => p.Id).ToList(),
+                    Categories = bg.Categories.Select(c => c.CategoryName).ToList()
+                }).ToList();
 
-
-                };
-                return View();
+                var GamesList = new ListViewModel { Boardgames = Boardgames };
+                return View(GamesList);
             }
         }
 
@@ -87,6 +97,13 @@ namespace BoardgameBank.Controllers
         public ActionResult GameInfo()
         {
             return View();
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            BoardgameRepository.DeleteGame(id);
+            return RedirectToAction("GamesList");
         }
     }
 }

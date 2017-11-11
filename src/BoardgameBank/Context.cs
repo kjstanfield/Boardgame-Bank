@@ -10,7 +10,7 @@ namespace BoardgameBank
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
             Database.SetInitializer(new DatabaseInitializer());
         }
-        public DbSet<Boardgame> BoardGames { get; set; }
+        public DbSet<Boardgame> Boardgames { get; set; }
         public DbSet<PlayerCount> PlayerCounts { get; set; }
         public DbSet<Category> Categories { get; set; }
     }

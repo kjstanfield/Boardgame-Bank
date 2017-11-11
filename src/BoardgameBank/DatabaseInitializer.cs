@@ -118,7 +118,7 @@ namespace BoardgameBank
                 Rating = 4
             };
 
-            context.BoardGames.AddOrUpdate(x => x.GameName, boardGame1, boardGame2, boardGame3);
+            context.Boardgames.AddOrUpdate(x => x.GameName, boardGame1, boardGame2, boardGame3);
             context.SaveChanges();
         }
     }
