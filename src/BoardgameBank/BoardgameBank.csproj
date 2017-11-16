@@ -131,6 +131,7 @@
     <Compile Include="Context.cs" />
     <Compile Include="Controllers\BoardgamesController.cs" />
     <Compile Include="Data\BoardgameRepository.cs" />
+    <Compile Include="Models\EditGameViewModel.cs" />
     <Compile Include="Models\AddGameViewModel.cs" />
     <Compile Include="Models\BoardgameViewModel.cs" />
     <Compile Include="Models\ListViewModel.cs" />

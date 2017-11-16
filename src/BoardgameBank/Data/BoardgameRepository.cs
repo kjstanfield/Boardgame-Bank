@@ -1,4 +1,5 @@
-﻿using BoardgameBank.Models;
+﻿using BoardgameBank.Controllers;
+using BoardgameBank.Models;
 using System.Data.Entity;
 
 namespace BoardgameBank.Data
@@ -15,10 +16,17 @@ namespace BoardgameBank.Data
             }
         }
 
-        public static void UpdateGame(Boardgame boardgame)
+        public static void UpdateGame(EditGameViewModel editGameViewModel)
         {
             using (var context = new Context())
             {
+                var boardgame = new Boardgame();
+                //TODO
+                //boardgame.PlayerCounts = editGameViewModel.PlayerCount;
+                //boardgame.PlayTime = editGameViewModel.PlayTime;
+                //boardgame.Categories = editGameViewModel.Categories;
+                //boardgame.Rating = editGameViewModel.SelectedRating;
+
                 context.Boardgames.Attach(boardgame);
                 context.Entry(boardgame).State = EntityState.Modified;
                 context.SaveChanges();

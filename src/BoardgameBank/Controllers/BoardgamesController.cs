@@ -25,7 +25,25 @@ namespace BoardgameBank.Controllers
         [HttpPost]
         public ActionResult ExecuteSearch(SearchViewModel model)
         {
-            return View("GamesList");
+            model.Categories = model.Categories ?? new int[0];
+            using (var context = new Context())
+            {
+                var boardgames = context.Boardgames.Where(b => model.Categories.All(c => b.Categories.Select(o => o.Id).Contains(c)))
+                    .Where(b => b.PlayerCounts.Select(o => o.Count).Contains(model.PlayerCount))
+                    .Where(b => b.PlayTime == model.PlayTime)
+                    .Select(bg => new BoardgameViewModel
+                     {
+                         GameName = bg.GameName,
+                         PlayTime = bg.PlayTime,
+                         Rating = bg.Rating.ToString(),
+                         Id = bg.Id,
+                         PlayerCounts = bg.PlayerCounts.Select(p => p.Id).ToList(),
+                         Categories = bg.Categories.Select(c => c.CategoryName).ToList()
+                     }).ToList();
+
+                var gamesList = new ListViewModel { Boardgames = boardgames };
+                return View("GamesList", gamesList);
+            }
         }
 
 
@@ -76,7 +94,7 @@ namespace BoardgameBank.Controllers
         {
             using (var context = new Context())
             {
-                var Boardgames = context.Boardgames.Select(bg => new BoardgameViewModel
+                var boardgames = context.Boardgames.Select(bg => new BoardgameViewModel
                 {
                     GameName = bg.GameName,
                     PlayTime = bg.PlayTime,
@@ -86,7 +104,7 @@ namespace BoardgameBank.Controllers
                     Categories = bg.Categories.Select(c => c.CategoryName).ToList()
                 }).ToList();
 
-                var GamesList = new ListViewModel { Boardgames = Boardgames };
+                var GamesList = new ListViewModel { Boardgames = boardgames };
                 return View(GamesList);
             }
         }
@@ -94,21 +112,34 @@ namespace BoardgameBank.Controllers
 
 
         //Selected game info
-        public ActionResult GameInfo()
+        public ActionResult GameInfo(int id)
         {
             using (var context = new Context())
             {
+                var editGameViewModel = context.Boardgames.Where(b=> b.Id == id).Select(bg => new EditGameViewModel
+                {
+                    GameName = bg.GameName,
+                    PlayTime = bg.PlayTime,
+                    SelectedRating = bg.Rating.ToString(),
+                    Id = bg.Id,
+                    PlayerCount = bg.PlayerCounts.Select(p => p.Id).ToList(),
+                    Categories = bg.Categories.Select(c => c.Id).ToList()
+                }).Single();
 
-                return View(GamesList);
+                editGameViewModel.AllCategories = context.Categories.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.CategoryName }).ToList();
+                editGameViewModel.AllPlayerCounts = context.PlayerCounts.Select(x => new SelectListItem { Value = x.Count.ToString() }).ToList();
+                editGameViewModel.SelectedPlayerCounts = new List<string>();
+
+                return View(editGameViewModel);
             }
         }
 
 
         //Edit
         [HttpPost]
-        public ActionResult Edit(Boardgame boardgame)
+        public ActionResult Edit(EditGameViewModel editGameViewModel)
         {
-            BoardgameRepository.UpdateGame(boardgame);
+            BoardgameRepository.UpdateGame(editGameViewModel);
             return RedirectToAction("GamesList");
         }
 

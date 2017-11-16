@@ -1,4 +1,7 @@
-﻿@{
+﻿@using BoardgameBank.Controllers;
+@model EditGameViewModel
+
+@{
     ViewBag.Title = "Game Info";
 }
 
@@ -10,15 +13,22 @@
     </div>
     <div class="gameinfo">
         <section id="form area">
-            <form>
-                <div class="form-group">
-                    <label>Number of Players:</label>
+
+            @using (Html.BeginForm())
+            {
+                @*<div class="form-group">
+                    @Html.Label("Number of Players:")
                     <div class="formcontainer">
                         <div id="playerCheck">
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption1" value="1player"> 1
-                                </label>
+
+                            @foreach (var playercount in Model.AllPlayerCounts)
+                            {
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="SelectedPlayerCounts" value="@playercount.Value"> @playercount.Value
+                                    </label>
+                                </div>
+                            }
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
@@ -47,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
                 <div class="form-group">
                     <label for="timeSelect">Play Time:</label>
                     <select class="form-control" id="newTimeSelect">
@@ -102,7 +112,7 @@
                         <button type="button" class="btn btn-primary addgamebtn">EDIT</button>
                     </div>
                 </div>
-            </form>
+            }
         </section>
     </div>
 </section>
