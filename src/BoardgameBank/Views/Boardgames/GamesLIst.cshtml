@@ -28,11 +28,11 @@
                     <td>@boardgame.PlayTime</td>
                     <td class="hiderating">@boardgame.Rating</td>
                     <td>
-                        <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo")'">
-                        <img class="smallbutton" src="/images/delete.svg">
+                        <img class="smallbutton" src="/images/edit.svg" onclick="location.href='@Url.Action("GameInfo", new { id = boardgame.Id })'">
+                        <img class="smallbutton" src="/images/delete.svg" onclick="location.href='@Url.Action("Delete", "Boardgames", new { id = boardgame.Id })'">
                         <div class="buttonholder">
                             <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("GameInfo", new { id = boardgame.Id })'">Edit</button>
-                            <button type="submit" class="btn btn-danger">@Html.ActionLink("Delete", "Delete", "Boardgames", new { id = boardgame.Id }, null)</button>
+                            <button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Boardgames", new { id = boardgame.Id })'">Delete</button>
                         </div>
                     </td>
                 </tr>

@@ -8,15 +8,14 @@
   <!--Game Info -->
 <section id=gameinfo>
     <div class="infobox">
-        <h3>Dead of Winter</h3>
-        <img class="gameinfoimg" src="/images/boardgames/deadofwinter.jpg">
+        <h3>@Model.GameName</h3>
     </div>
     <div class="gameinfo">
         <section id="form area">
 
             @using (Html.BeginForm())
             {
-                @*<div class="form-group">
+                <div class="form-group">
                     @Html.Label("Number of Players:")
                     <div class="formcontainer">
                         <div id="playerCheck">
@@ -30,36 +29,10 @@
                                 </div>
                             }
                             </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption2" value="2player"> 2
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption3" value="3player"> 3
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption4" value="4player"> 4
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption5" value="5player"> 5
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="players" id="playerOption6" value="6player"> 6+
-                                </label>
-                            </div>
                         </div>
                     </div>
-                </div>*@
                 <div class="form-group">
-                    <label for="timeSelect">Play Time:</label>
+                    @Html.Label("Play Time:")
                     <select class="form-control" id="newTimeSelect">
                         <option selected>...</option>
                         <option>Quick</option>
@@ -68,16 +41,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="categorySelect">Categories:</label>
-                    <select multiple class="form-control" id="newCategorySelect" size="7">
-                        <option>Area Control</option>
-                        <option>Bluffing</option>
-                        <option>Card Game</option>
-                        <option>Deck Builder</option>
-                        <option>Dice Rolling</option>
-                        <option>Elimination</option>
-                        <option>Hidden Roles</option>
-                    </select>
+                    @Html.Label("Categories:")
+                    @Html.ListBoxFor(x => x.Categories, Model.AllCategories, new { @class = "form-control", size = 8 })
                 </div>
                 <div class="form-group">
                     <label>Rating:</label>
@@ -85,27 +50,27 @@
                         <div id="ratingRadios">
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="rating" id="newRatingOption1" value="option1"> 1
+                                    <input class="form-check-input" type="radio" name="SelectedRating" id="newRatingOption1" value="1"> 1
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="rating" id="newRatingOption2" value="option1"> 2
+                                    <input class="form-check-input" type="radio" name="SelectedRating" id="newRatingOption2" value="2"> 2
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="rating" id="newRatingOption3" value="option1"> 3
+                                    <input class="form-check-input" type="radio" name="SelectedRating" id="newRatingOption3" value="3"> 3
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="rating" id="newRatingOption4" value="option1"> 4
+                                    <input class="form-check-input" type="radio" name="SelectedRating" id="newRatingOption4" value="4"> 4
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="rating" id="newRatingOption5" value="option1"> 5
+                                    <input class="form-check-input" type="radio" name="SelectedRating" id="newRatingOption5" value="5"> 5
                                 </label>
                             </div>
                         </div>
