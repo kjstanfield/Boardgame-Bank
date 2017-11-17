@@ -128,7 +128,11 @@ namespace BoardgameBank.Controllers
 
                 editGameViewModel.AllCategories = context.Categories.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.CategoryName }).ToList();
                 editGameViewModel.AllPlayerCounts = context.PlayerCounts.Select(x => new SelectListItem { Value = x.Count.ToString() }).ToList();
-                editGameViewModel.SelectedPlayerCounts = new List<string>();
+
+                foreach (var playercount in editGameViewModel.AllPlayerCounts)
+                {
+                    playercount.Selected = editGameViewModel.PlayerCount.Contains(int.Parse(playercount.Value));
+                }
 
                 return View(editGameViewModel);
             }
