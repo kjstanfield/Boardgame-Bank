@@ -24,9 +24,9 @@ namespace BoardgameBank.Data
                 boardgame.PlayTime = editGameViewModel.PlayTime;
                 boardgame.Rating = Int32.Parse(editGameViewModel.SelectedRating);
 
-                foreach (var playerCount in editGameViewModel.PlayerCount)
+                foreach (var playerCount in editGameViewModel.SelectedPlayerCounts)
                 {
-                    boardgame.PlayerCounts.Add(new PlayerCount { Count = playerCount });
+                    boardgame.PlayerCounts.Add(new PlayerCount { Count = Int32.Parse(playerCount) });
                 }
 
                 foreach (var category in editGameViewModel.AllCategories)
