@@ -14,7 +14,7 @@
     <div class="gameinfo">
         <section id="form area">
 
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Edit","Boardgames"))
             {
                 @*<div class="form-group">
                     @Html.Label("Number of Players:")
@@ -109,7 +109,7 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary addgamebtn">EDIT</button>
+                        <button type="submit" class="btn btn-primary addgamebtn">EDIT</button>
                     </div>
                 </div>
             }
