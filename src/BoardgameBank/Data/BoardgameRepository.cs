@@ -29,7 +29,7 @@ namespace BoardgameBank.Data
                     boardgame.PlayerCounts.Add(new PlayerCount { Count = playerCount });
                 }
 
-                foreach (var category in editGameViewModel.Categories)
+                foreach (var category in editGameViewModel.AllCategories)
                 {
                     boardgame.Categories.Add(new Category { CategoryName = category.ToString() });
                 }
