@@ -85,6 +85,11 @@ namespace BoardgameBank
                 CategoryName = "Deduction"
             };
 
+            var cooperative = new Category()
+            {
+                CategoryName = "Co-operative Play"
+            };
+
             context.Categories.AddOrUpdate(x => x.CategoryName, areaControl, bluffing, cardGame,
                 deckBuilder, diceRolling, elimination, hiddenRoles, deduction);
             context.SaveChanges();
@@ -112,13 +117,49 @@ namespace BoardgameBank
             var boardGame3 = new Boardgame()
             {
                 GameName = "Secret Hitler",
-                PlayerCounts = new List<PlayerCount> { sixPlayer },
+                PlayerCounts = new List<PlayerCount> { fivePlayer, sixPlayer },
                 PlayTime = "Quick",
                 Categories = new List<Category> { bluffing, cardGame, deduction },
                 Rating = 4
             };
 
-            context.Boardgames.AddOrUpdate(x => x.GameName, boardGame1, boardGame2, boardGame3);
+            var boardGame4 = new Boardgame()
+            {
+                GameName = "Elder Sign",
+                PlayerCounts = new List<PlayerCount> { twoPlayer, threePlayer, fourPlayer, fivePlayer, sixPlayer },
+                PlayTime = "Long",
+                Categories = new List<Category> { diceRolling, cooperative },
+                Rating = 3
+            };
+
+            var boardGame5 = new Boardgame()
+            {
+                GameName = "Specter Ops",
+                PlayerCounts = new List<PlayerCount> { twoPlayer, threePlayer, fourPlayer, fivePlayer },
+                PlayTime = "Long",
+                Categories = new List<Category> { diceRolling, cooperative },
+                Rating = 3
+            };
+
+            var boardGame6 = new Boardgame()
+            {
+                GameName = "Quantum",
+                PlayerCounts = new List<PlayerCount> { twoPlayer, threePlayer, fourPlayer },
+                PlayTime = "Medium",
+                Categories = new List<Category> { diceRolling, elimination },
+                Rating = 5
+            };
+
+            var boardGame7 = new Boardgame()
+            {
+                GameName = "A Game of Thrones: The Board Game (Second Edition)",
+                PlayerCounts = new List<PlayerCount> { threePlayer, fourPlayer, fivePlayer, sixPlayer },
+                PlayTime = "Long",
+                Categories = new List<Category> { elimination, cardGame, bluffing },
+                Rating = 5
+            };
+
+            context.Boardgames.AddOrUpdate(x => x.GameName, boardGame1, boardGame2, boardGame3, boardGame4, boardGame5, boardGame6, boardGame7);
             context.SaveChanges();
         }
     }
