@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace BoardgameBank.Controllers
+namespace BoardgameBank.Models
 {
     public class EditGameViewModel
     {

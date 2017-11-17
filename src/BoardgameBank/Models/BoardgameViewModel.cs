@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BoardgameBank.Controllers
+namespace BoardgameBank.Models
 {
     public class BoardgameViewModel
     {
