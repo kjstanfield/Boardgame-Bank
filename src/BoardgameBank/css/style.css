@@ -181,6 +181,7 @@ label {
 
 .smallbutton {
     width: 1.2rem;
+    cursor: pointer;
 }
 
 #gametable .btn {
@@ -212,9 +213,9 @@ label {
     text-align: center;
 }
 
-    .infobox h3 {
-        margin: 0;
-    }
+.infobox h3 {
+    margin: 1.3rem 0 3rem 0;
+}
 
 .gameinfoimg {
     margin: 1rem;
