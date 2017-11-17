@@ -21,10 +21,18 @@ namespace BoardgameBank.Data
             using (var context = new Context())
             {
                 var boardgame = new Boardgame();
-                boardgame.PlayerCounts = editGameViewModel.PlayerCount;
                 boardgame.PlayTime = editGameViewModel.PlayTime;
-                boardgame.Categories = editGameViewModel.Categories;
                 boardgame.Rating = Int32.Parse(editGameViewModel.SelectedRating);
+
+                foreach (var playerCount in editGameViewModel.PlayerCount)
+                {
+                    boardgame.PlayerCounts.Add(new PlayerCount { Count = playerCount });
+                }
+
+                foreach (var category in editGameViewModel.Categories)
+                {
+                    boardgame.Categories.Add(new Category { CategoryName = category.ToString() });
+                }
 
                 context.Boardgames.Attach(boardgame);
                 context.Entry(boardgame).State = EntityState.Modified;
